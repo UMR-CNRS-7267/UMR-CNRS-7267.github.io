@@ -1,0 +1,1125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="eBIOINF Bioinformatics Core Facility — computational biology, omics, HPC and bioinformatics resources at EBI, UMR CNRS 7267.">
+  <meta name="theme-color" content="#102b46">
+  <title>eBIOINF | Bioinformatics Core Facility</title>
+  <style>
+    :root {
+      --navy: #102b46; --blue: #176b87; --cyan: #20b8c4;
+      --ink: #243447; --muted: #617286; --line: #e3eaf0;
+      --paper: #ffffff; --wash: #f3f7fa; --accent: #e8f8f8;
+      --shadow: 0 12px 34px rgba(16,43,70,.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0; background: var(--wash); color: var(--ink);
+      font: 16px/1.7 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .hero {
+      color: white; background: linear-gradient(125deg, #102b46 0%, #14536c 60%, #138d9a 100%);
+      padding: 42px 22px 38px; text-align: center;
+    }
+    .hero-inner { max-width: 1120px; margin: auto; }
+    .hero img { max-width: 100%; height: auto; }
+    .hero h1 { margin: 18px 0 2px; font-size: clamp(2.5rem, 6vw, 4.2rem); letter-spacing: .08em; }
+    .hero h3 { margin: 0; font-size: 1.05rem; font-weight: 650; letter-spacing: .16em; }
+    .hero p { margin: 14px 0 0; color: #d8f1f3; }
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 20px; }
+    .badges img { height: 28px; }
+    .sticky {
+      position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px); border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      max-width: 1180px; margin: auto; padding: 11px 22px;
+      display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: center;
+    }
+    .nav a { color: var(--navy); font-size: .9rem; font-weight: 650; }
+    main { max-width: 1120px; margin: 34px auto 70px; padding: 0 22px; }
+    .content {
+      background: var(--paper); border: 1px solid var(--line); border-radius: 18px;
+      box-shadow: var(--shadow); padding: clamp(22px, 4vw, 48px);
+    }
+    h2 {
+      color: var(--navy); font-size: clamp(1.45rem, 3vw, 1.9rem);
+      line-height: 1.25; margin: 2.4em 0 .8em; padding-bottom: .45em;
+      border-bottom: 2px solid var(--accent);
+    }
+    h2:first-child { margin-top: 0; }
+    h3 { color: var(--blue); margin-top: 1.7em; }
+    p { margin: .75em 0; }
+    ul { padding-left: 1.4em; }
+    hr { border: 0; border-top: 1px solid var(--line); margin: 2.3em 0; }
+    table {
+      width: 100%; border-collapse: collapse; margin: 1.1em 0 1.8em;
+      font-size: .94rem; display: block; overflow-x: auto;
+    }
+    th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+    th { background: #edf5f8; color: var(--navy); font-weight: 700; }
+    tr:nth-child(even) td { background: #fbfdfe; }
+    details {
+      margin: 1em 0 1.8em; border: 1px solid var(--line); border-radius: 12px;
+      background: #fcfefe; overflow: hidden;
+    }
+    summary {
+      cursor: pointer; padding: 14px 18px; color: var(--navy);
+      background: #f0f8fa; font-weight: 700; list-style-position: inside;
+    }
+    details[open] summary { border-bottom: 1px solid var(--line); }
+    details > table { margin: 0; }
+    details > p { padding: 0 18px; }
+    code { background: #eef3f6; padding: .12em .35em; border-radius: 5px; }
+    .content > p:first-of-type img { max-width: 100%; }
+    .content img { max-width: 100%; }
+    .content > p:last-child { margin-bottom: 0; }
+    footer {
+      background: var(--navy); color: #d9e7ef; text-align: center;
+      padding: 28px 20px; font-size: .92rem;
+    }
+    footer img { max-height: 42px; vertical-align: middle; margin: 10px 14px; }
+    .backtop { position: fixed; right: 18px; bottom: 18px; background: var(--blue); color: white;
+      padding: 9px 13px; border-radius: 999px; box-shadow: var(--shadow); font-size: .85rem; }
+    @media (max-width: 640px) {
+      .hero { padding: 30px 16px; } main { padding: 0 12px; margin-top: 16px; }
+      .content { padding: 20px 16px; } .nav { gap: 8px 13px; }
+      body { font-size: 15px; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="hero">
+    <div class="hero-inner">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./banner_02.PNG">
+        <source media="(prefers-color-scheme: light)" srcset="./banner_02.PNG">
+        <img src="./banner-light.svg" width="100%" alt="eBIOINF Bioinformatics Core Facility">
+      </picture>
+      <h1>eBIOINF</h1>
+      <h3>BIOINFORMATICS CORE FACILITY</h3>
+      <p><strong>EBI · UMR CNRS 7267</strong><br>Computational Biology | Omics | HPC | Data Science</p>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/Genomics-Bioinformatics-00BCD4?style=for-the-badge" alt="Genomics Bioinformatics">
+        <img src="https://img.shields.io/badge/NGS-Analysis-009688?style=for-the-badge" alt="NGS Analysis">
+        <img src="https://img.shields.io/badge/HPC-Computing-1565C0?style=for-the-badge" alt="HPC Computing">
+        <img src="https://img.shields.io/badge/Research-CNRS-673AB7?style=for-the-badge" alt="Research CNRS">
+      </div>
+    </div>
+  </header>
+  <div class="sticky"><nav class="nav" aria-label="Main navigation"><a href="#about-ebioinf">About</a><a href="#computing-infrastructure">Infrastructure</a><a href="#software-catalogue">Software catalogue</a><a href="#in-house-development">In-house development</a><a href="#platform-team">Platform team</a><a href="#how-to-cite-the-platform">How to cite</a></nav></div>
+  <main><article class="content"><picture>
+  <source media="(prefers-color-scheme: dark)"
+          srcset="./banner_02.PNG">
+  <source media="(prefers-color-scheme: light)"
+          srcset="./banner_02.PNG">
+  <img src="./banner-light.svg"
+       width="100%"
+       alt="eBIOINF Bioinformatics Core Facility">
+
+<h1 align="center">eBIOINF</h1>
+
+<h3 align="center">
+  BIOINFORMATICS CORE FACILITY
+</h3>
+
+<p align="center">
+  <b>EBI · UMR CNRS 7267</b><br>
+  Computational Biology | Omics | HPC | Data Science
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Genomics-Bioinformatics-00BCD4?style=for-the-badge">
+  <img src="https://img.shields.io/badge/NGS-Analysis-009688?style=for-the-badge">
+  <img src="https://img.shields.io/badge/HPC-Computing-1565C0?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Research-CNRS-673AB7?style=for-the-badge">
+</p>
+
+<hr />
+<h2 id="about-ebioinf">🧬 About eBIOINF</h2>
+<p><strong>eBIOINF</strong> is the bioinformatics core facility of EBI,
+UMR CNRS 7267.</p>
+<p>Founded in 2012, the platform provides computational
+resources, bioinformatics expertise, and analytical
+support for high-throughput sequencing and omics data.</p>
+<p>Our expertise covers:</p>
+<table>
+<thead>
+<tr>
+  <th>Domain</th>
+  <th>Expertise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>🧬 Genomics</td>
+  <td>Genome assembly, annotation and comparative genomics</td>
+</tr>
+<tr>
+  <td>🦠 Metagenomics</td>
+  <td>Microbial community analysis</td>
+</tr>
+<tr>
+  <td>🧪 Transcriptomics</td>
+  <td>RNA-seq and differential expression</td>
+</tr>
+<tr>
+  <td>🔬 Metatranscriptomics</td>
+  <td>Functional microbial activity</td>
+</tr>
+<tr>
+  <td>📊 Bioinformatics</td>
+  <td>Statistical analysis and data visualization</td>
+</tr>
+<tr>
+  <td>💻 HPC</td>
+  <td>High-performance computing and workflow development</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="computing-infrastructure">🖥️ Computing Infrastructure</h2>
+<p>Our platform provides dedicated computational resources
+for demanding bioinformatics analyses.</p>
+<h3 id="computing-servers">Computing servers</h3>
+<table>
+<thead>
+<tr>
+  <th>Infrastructure</th>
+  <th style="text-align:right">CPU Cores</th>
+  <th style="text-align:right">RAM</th>
+  <th style="text-align:right">Storage</th>
+  <th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Small Node</td>
+  <td style="text-align:right">12</td>
+  <td style="text-align:right">144 GB</td>
+  <td style="text-align:right">22 TB</td>
+  <td>Interactive</td>
+</tr>
+<tr>
+  <td>Medium Node</td>
+  <td style="text-align:right">24</td>
+  <td style="text-align:right">265 GB</td>
+  <td style="text-align:right">10 TB</td>
+  <td>Interactive</td>
+</tr>
+<tr>
+  <td>Big Node 1</td>
+  <td style="text-align:right">40</td>
+  <td style="text-align:right">1 TB</td>
+  <td style="text-align:right">22 TB</td>
+  <td>Interactive</td>
+</tr>
+<tr>
+  <td>Big Node 2</td>
+  <td style="text-align:right">128</td>
+  <td style="text-align:right">1TB</td>
+  <td style="text-align:right">50TB</td>
+  <td>Interactive</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hpc-cluster">HPC Cluster</h3>
+<table>
+<thead>
+<tr>
+  <th>Resource</th>
+  <th style="text-align:right">Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Computing nodes</td>
+  <td style="text-align:right">8</td>
+</tr>
+<tr>
+  <td>Total CPU cores</td>
+  <td style="text-align:right">272</td>
+</tr>
+<tr>
+  <td>Shared RAM</td>
+  <td style="text-align:right">3 TB</td>
+</tr>
+<tr>
+  <td>Computing power</td>
+  <td style="text-align:right">13 TFLOPS</td>
+</tr>
+<tr>
+  <td>Storage</td>
+  <td style="text-align:right">20 TB</td>
+</tr>
+<tr>
+  <td>Job scheduler</td>
+  <td style="text-align:right">SLURM</td>
+</tr>
+</tbody>
+</table>
+<h3 id="storage-virtualization">Storage &amp; Virtualization</h3>
+<table>
+<thead>
+<tr>
+  <th>Infrastructure</th>
+  <th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>NAS</td>
+  <td>28 TB</td>
+</tr>
+<tr>
+  <td>Backup &amp; Archiving</td>
+  <td>300 TB</td>
+</tr>
+<tr>
+  <td>Virtual Machines</td>
+  <td>On demand</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="software-catalogue">🧰 Software Catalogue</h2>
+<p>This catalogue lists bioinformatics software available on the platform. Software is provided through environment modules, Conda environments, and/or Singularity/Apptainer containers, depending on the tool.
+Software is regularly maintained and updated. Availability can vary between computing nodes and environments. If a tool is not available or you need a particular version, please contact the platform administrator.</p>
+<hr />
+<h2 id="genome-assembly-and-reconstruction">🧬 Genome assembly and reconstruction</h2>
+<details>
+<summary><strong>Show genome assembly tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>ABySS</td>
+  <td>De novo genome assembler based on de Bruijn graphs, commonly used for short-read data.</td>
+  <td><a href="https://github.com/bcgsc/abyss">GitHub</a></td>
+</tr>
+<tr>
+  <td>Canu</td>
+  <td>De novo assembler for noisy long reads, including PacBio and Oxford Nanopore data.</td>
+  <td><a href="https://github.com/marbl/canu">GitHub</a></td>
+</tr>
+<tr>
+  <td>DENTIST</td>
+  <td>Tool for detecting and correcting assembly errors using long-read alignments.</td>
+  <td><a href="https://github.com/ksahlin/DENTIST">GitHub</a></td>
+</tr>
+<tr>
+  <td>FMLRC2</td>
+  <td>Hybrid error correction of long reads using accurate short reads.</td>
+  <td><a href="https://github.com/hanfang/FMLRC2">GitHub</a></td>
+</tr>
+<tr>
+  <td>hifiasm</td>
+  <td>Fast assembler for PacBio HiFi reads, including phased and haplotype-resolved assemblies.</td>
+  <td><a href="https://github.com/chhylp123/hifiasm">GitHub</a></td>
+</tr>
+<tr>
+  <td>MEGAHIT</td>
+  <td>Fast, memory-efficient assembler designed for large and complex metagenomic datasets.</td>
+  <td><a href="https://github.com/voutcn/megahit">GitHub</a></td>
+</tr>
+<tr>
+  <td>minipolish</td>
+  <td>Polishes long-read assembly graphs using read-to-assembly alignments.</td>
+  <td><a href="https://github.com/rrwick/Minipolish">GitHub</a></td>
+</tr>
+<tr>
+  <td>PECAT</td>
+  <td>Long-read genome assembly pipeline with error correction and assembly refinement.</td>
+  <td><a href="https://github.com/lemene/PECAT">GitHub</a></td>
+</tr>
+<tr>
+  <td>Peregrine</td>
+  <td>Fast assembler for long, accurate sequencing reads.</td>
+  <td><a href="https://github.com/cschin/Peregrine">GitHub</a></td>
+</tr>
+<tr>
+  <td>Raven</td>
+  <td>De novo genome assembler for long sequencing reads.</td>
+  <td><a href="https://github.com/lbcb-sci/raven">GitHub</a></td>
+</tr>
+<tr>
+  <td>rust-mdbg</td>
+  <td>Genome assembly based on a minimizer-space de Bruijn graph approach.</td>
+  <td><a href="https://github.com/ekimb/rust-mdbg">GitHub</a></td>
+</tr>
+<tr>
+  <td>Verkko</td>
+  <td>Builds high-quality, often haplotype-resolved assemblies using long-read data, particularly HiFi and ultra-long reads.</td>
+  <td><a href="https://github.com/marbl/verkko">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="genome-annotation-and-repeat-analysis">🧬 Genome annotation and repeat analysis</h2>
+<details>
+<summary><strong>Show annotation tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>AGAT</td>
+  <td>Toolkit for parsing, converting, validating and manipulating genome annotation files such as GFF and GTF.</td>
+  <td><a href="https://github.com/NBISweden/AGAT">GitHub</a></td>
+</tr>
+<tr>
+  <td>DRAM</td>
+  <td>Functional annotation and metabolic reconstruction of microbial genomes and metagenome-assembled genomes.</td>
+  <td><a href="https://github.com/WrightonLabCSU/DRAM">GitHub</a></td>
+</tr>
+<tr>
+  <td>Earl Grey</td>
+  <td>Automated identification and annotation of transposable elements and other repetitive sequences in eukaryotic genomes.</td>
+  <td><a href="https://github.com/TobyBaril/EarlGrey">GitHub</a></td>
+</tr>
+<tr>
+  <td>Funannotate</td>
+  <td>Genome annotation pipeline, particularly designed for fungal genomes.</td>
+  <td><a href="https://github.com/nextgenusfs/funannotate">GitHub</a></td>
+</tr>
+<tr>
+  <td>Miniprot</td>
+  <td>Protein-to-genome aligner useful for identifying protein-coding genes and supporting genome annotation.</td>
+  <td><a href="https://github.com/lh3/miniprot">GitHub</a></td>
+</tr>
+<tr>
+  <td>Prokka</td>
+  <td>Rapid annotation of bacterial and archaeal genome assemblies.</td>
+  <td><a href="https://github.com/tseemann/prokka">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="genome-quality-control-and-assembly-assessment">📊 Genome quality control and assembly assessment</h2>
+<details>
+<summary><strong>Show quality-control tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>BUSCO</td>
+  <td>Assesses genome, transcriptome or protein-set completeness using evolutionarily conserved single-copy orthologs.</td>
+  <td><a href="https://github.com/busco-phylogenomics/BUSCO">GitHub</a></td>
+</tr>
+<tr>
+  <td>CheckM</td>
+  <td>Estimates the completeness and contamination of microbial genomes using marker genes.</td>
+  <td><a href="https://github.com/Ecogenomics/CheckM">GitHub</a></td>
+</tr>
+<tr>
+  <td>CheckM2</td>
+  <td>Estimates microbial genome quality using machine-learning-based models.</td>
+  <td><a href="https://github.com/chklovski/CheckM2">GitHub</a></td>
+</tr>
+<tr>
+  <td>CheckV</td>
+  <td>Evaluates the quality and completeness of viral genomes and metagenome-derived viral sequences.</td>
+  <td><a href="https://github.com/AnantharamanLab/CheckV">GitHub</a></td>
+</tr>
+<tr>
+  <td>KAT</td>
+  <td>K-mer analysis toolkit for genome assembly assessment and sequencing-data quality control.</td>
+  <td><a href="https://github.com/TGAC/KAT">GitHub</a></td>
+</tr>
+<tr>
+  <td>LongQC</td>
+  <td>Quality-control and evaluation toolkit for long-read sequencing data.</td>
+  <td><a href="https://github.com/yfukasawa/LongQC">GitHub</a></td>
+</tr>
+<tr>
+  <td>Merqury</td>
+  <td>Reference-free assessment of genome assemblies using k-mer analysis and high-accuracy sequencing reads.</td>
+  <td><a href="https://github.com/marbl/merqury">GitHub</a></td>
+</tr>
+<tr>
+  <td>QUAST</td>
+  <td>Evaluates and compares genome assembly quality using a range of assembly statistics.</td>
+  <td><a href="https://github.com/ablab/quast">GitHub</a></td>
+</tr>
+<tr>
+  <td>Smudgeplot</td>
+  <td>Estimates genome ploidy and heterozygosity patterns from k-mer frequency distributions.</td>
+  <td><a href="https://github.com/KamilSJaron/smudgeplot">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="metagenomics-microbiome-and-microbial-genomics">🦠 Metagenomics, microbiome and microbial genomics</h2>
+<details>
+<summary><strong>Show metagenomics and microbiome tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Bracken</td>
+  <td>Estimates taxonomic abundance from Kraken classification results.</td>
+  <td><a href="https://github.com/jenniferlu717/Bracken">GitHub</a></td>
+</tr>
+<tr>
+  <td>Centrifuge</td>
+  <td>Rapid classification of metagenomic reads against large collections of reference genomes.</td>
+  <td><a href="https://github.com/DaehwanKimLab/centrifuge">GitHub</a></td>
+</tr>
+<tr>
+  <td>CoverM</td>
+  <td>Calculates coverage and relative abundance of genomes or contigs in metagenomic datasets.</td>
+  <td><a href="https://github.com/wwood/CoverM">GitHub</a></td>
+</tr>
+<tr>
+  <td>dRep</td>
+  <td>Dereplicates and clusters microbial genomes, including metagenome-assembled genomes (MAGs).</td>
+  <td><a href="https://github.com/MrOlm/drep">GitHub</a></td>
+</tr>
+<tr>
+  <td>GTDB-Tk</td>
+  <td>Assigns bacterial and archaeal genome taxonomy using the Genome Taxonomy Database.</td>
+  <td><a href="https://github.com/Ecogenomics/GTDBTk">GitHub</a></td>
+</tr>
+<tr>
+  <td>Kaiju</td>
+  <td>Classifies metagenomic sequencing reads using protein-level comparisons.</td>
+  <td><a href="https://github.com/bioinformatics-centre/kaiju">GitHub</a></td>
+</tr>
+<tr>
+  <td>Kraken2</td>
+  <td>Fast taxonomic classification of metagenomic reads using k-mer-based matching.</td>
+  <td><a href="https://github.com/DerrickWood/kraken2">GitHub</a></td>
+</tr>
+<tr>
+  <td>KrakenTools</td>
+  <td>Utilities for processing, summarizing and extracting information from Kraken and Bracken results.</td>
+  <td><a href="https://github.com/jenniferlu717/KrakenTools">GitHub</a></td>
+</tr>
+<tr>
+  <td>MaxBin2</td>
+  <td>Bins metagenomic contigs into draft genomes using sequence composition and coverage information.</td>
+  <td><a href="https://github.com/berkeleylab/MaxBin">GitHub</a></td>
+</tr>
+<tr>
+  <td>MetaBAT2</td>
+  <td>Metagenomic binning tool for reconstructing microbial genomes from assembled contigs.</td>
+  <td><a href="https://github.com/berkeleylab/metabat">GitHub</a></td>
+</tr>
+<tr>
+  <td>MetaPhlAn</td>
+  <td>Marker-gene-based profiling of microbial community composition and relative abundance.</td>
+  <td><a href="https://github.com/biobakery/MetaPhlAn">GitHub</a></td>
+</tr>
+<tr>
+  <td>VirSorter2</td>
+  <td>Identifies and classifies viral sequences in genomic and metagenomic data.</td>
+  <td><a href="https://github.com/jiarong/VirSorter2">GitHub</a></td>
+</tr>
+<tr>
+  <td>vContact2</td>
+  <td>Groups and classifies viral genomes using gene-sharing networks.</td>
+  <td><a href="https://bitbucket.org/MAVERICLab/vcontact2/">Bitbucket</a></td>
+</tr>
+<tr>
+  <td>Whokaryote</td>
+  <td>Distinguishes eukaryotic and prokaryotic sequences in metagenomic assemblies.</td>
+  <td><a href="https://github.com/JLSteenwyk/Whokaryote">GitHub</a></td>
+</tr>
+<tr>
+  <td>VSEARCH</td>
+  <td>Open-source tool for sequence searching, clustering, dereplication, chimera detection and related analyses.</td>
+  <td><a href="https://github.com/torognes/vsearch">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="transcriptomics-and-rna-seq">🧪 Transcriptomics and RNA-seq</h2>
+<details>
+<summary><strong>Show transcriptomics tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>deepTools</td>
+  <td>Suite for analysis and visualization of high-throughput sequencing data, including RNA-seq and ChIP-seq.</td>
+  <td><a href="https://github.com/deeptools/deepTools">GitHub</a></td>
+</tr>
+<tr>
+  <td>DADA2</td>
+  <td>Infers exact amplicon sequence variants (ASVs) from marker-gene sequencing data.</td>
+  <td><a href="https://github.com/benjjneb/dada2">GitHub</a></td>
+</tr>
+<tr>
+  <td>HTSeq</td>
+  <td>Assigns sequencing reads to genomic features, commonly for RNA-seq gene-count generation.</td>
+  <td><a href="https://github.com/htseq/htseq">GitHub</a></td>
+</tr>
+<tr>
+  <td>R</td>
+  <td>Statistical computing and graphics environment, widely used for omics data analysis.</td>
+  <td><a href="https://www.r-project.org/">Official website</a></td>
+</tr>
+<tr>
+  <td>SortMeRNA</td>
+  <td>Filters ribosomal RNA sequences from metatranscriptomic and other sequencing datasets.</td>
+  <td><a href="https://github.com/biocore/sortmerna">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="long-read-sequencing-nanopore-and-pacbio">🧬 Long-read sequencing: Nanopore and PacBio</h2>
+<details>
+<summary><strong>Show long-read sequencing tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Chopper</td>
+  <td>Filters Oxford Nanopore reads by length and quality.</td>
+  <td><a href="https://github.com/wdecoster/chopper">GitHub</a></td>
+</tr>
+<tr>
+  <td>Medaka</td>
+  <td>Neural-network-based consensus polishing for Oxford Nanopore assemblies.</td>
+  <td><a href="https://github.com/nanoporetech/medaka">GitHub</a></td>
+</tr>
+<tr>
+  <td>NanoPack</td>
+  <td>Collection of tools for processing, filtering and visualizing long-read sequencing data.</td>
+  <td><a href="https://github.com/wdecoster/nanopack">GitHub</a></td>
+</tr>
+<tr>
+  <td>NanoPlot</td>
+  <td>Generates quality-control plots for long-read sequencing data.</td>
+  <td><a href="https://github.com/wdecoster/NanoPlot">GitHub</a></td>
+</tr>
+<tr>
+  <td>NanoPolish</td>
+  <td>Signal-level analysis and polishing of Oxford Nanopore sequencing reads and assemblies.</td>
+  <td><a href="https://github.com/jts/nanopolish">GitHub</a></td>
+</tr>
+<tr>
+  <td>PycoQC</td>
+  <td>Quality-control and visualization reports for Oxford Nanopore sequencing runs.</td>
+  <td><a href="https://github.com/a-slide/pycoQC">GitHub</a></td>
+</tr>
+<tr>
+  <td>Porechop</td>
+  <td>Detects and trims adapters in Oxford Nanopore reads and can identify chimeric reads.</td>
+  <td><a href="https://github.com/rrwick/Porechop">GitHub</a></td>
+</tr>
+<tr>
+  <td>Racon</td>
+  <td>Consensus-generation and polishing tool for long-read genome assemblies.</td>
+  <td><a href="https://github.com/isovic/racon">GitHub</a></td>
+</tr>
+<tr>
+  <td>Winnowmap</td>
+  <td>Long-read mapper designed to improve mapping in repetitive genomic regions.</td>
+  <td><a href="https://github.com/marbl/Winnowmap">GitHub</a></td>
+</tr>
+<tr>
+  <td>Minimap2</td>
+  <td>Fast sequence mapper for long DNA and RNA reads and whole-genome alignments.</td>
+  <td><a href="https://github.com/lh3/minimap2">GitHub</a></td>
+</tr>
+<tr>
+  <td>Sniffles</td>
+  <td>Structural-variant caller for long-read sequencing data.</td>
+  <td><a href="https://github.com/fritzsedlazeck/Sniffles">GitHub</a></td>
+</tr>
+<tr>
+  <td>SVIM</td>
+  <td>Detects structural variants from long-read alignments.</td>
+  <td><a href="https://github.com/eldariont/svim">GitHub</a></td>
+</tr>
+<tr>
+  <td>RagTag</td>
+  <td>Reference-guided scaffolding, correction and comparison of genome assemblies.</td>
+  <td><a href="https://github.com/malonge/RagTag">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="comparative-genomics-and-phylogenetics">🧬 Comparative genomics and phylogenetics</h2>
+<details>
+<summary><strong>Show comparative genomics and phylogenetics tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>BEAST</td>
+  <td>Bayesian evolutionary analysis of molecular sequences, including phylogenetic inference and molecular dating.</td>
+  <td><a href="https://github.com/beast-dev/beast-mcmc">BEAST 1 GitHub</a> · <a href="https://github.com/CompEvol/beast2">BEAST 2 GitHub</a></td>
+</tr>
+<tr>
+  <td>ETE Toolkit</td>
+  <td>Python toolkit for manipulating, analyzing and visualizing phylogenetic trees.</td>
+  <td><a href="https://github.com/etetoolkit/ete">GitHub</a></td>
+</tr>
+<tr>
+  <td>GToTree</td>
+  <td>Builds phylogenomic trees from selected conserved marker genes.</td>
+  <td><a href="https://github.com/AstrobioMike/GToTree">GitHub</a></td>
+</tr>
+<tr>
+  <td>Gubbins</td>
+  <td>Detects regions of recombination in bacterial genome alignments for phylogenetic analysis.</td>
+  <td><a href="https://github.com/nickjcroucher/gubbins">GitHub</a></td>
+</tr>
+<tr>
+  <td>IQ-TREE</td>
+  <td>Maximum-likelihood phylogenetic inference, model selection and branch support analysis.</td>
+  <td><a href="https://github.com/iqtree/iqtree2">GitHub</a></td>
+</tr>
+<tr>
+  <td>OrthoFinder</td>
+  <td>Identifies orthogroups, orthologs and gene duplications and infers species-level phylogenetic relationships.</td>
+  <td><a href="https://github.com/davidemms/OrthoFinder">GitHub</a></td>
+</tr>
+<tr>
+  <td>PhyloBayes-MPI</td>
+  <td>Bayesian phylogenetic inference using site-heterogeneous evolutionary models.</td>
+  <td><a href="https://github.com/bayesiancook/phylobayesmpi">GitHub</a></td>
+</tr>
+<tr>
+  <td>MEGA</td>
+  <td>Molecular evolutionary genetics analysis, including sequence alignment, evolutionary distance estimation and phylogenetics.</td>
+  <td><a href="https://www.megasoftware.net/">Official website</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="variant-calling-population-genomics-and-antimicrobial-resistance">🧫 Variant calling, population genomics and antimicrobial resistance</h2>
+<details>
+<summary><strong>Show variant analysis tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>ABRicate</td>
+  <td>Screens assembled bacterial genomes for antimicrobial-resistance, virulence and other sequence markers using reference databases.</td>
+  <td><a href="https://github.com/tseemann/abricate">GitHub</a></td>
+</tr>
+<tr>
+  <td>PoolSNP</td>
+  <td>Calls SNPs from pooled sequencing data.</td>
+  <td><a href="https://github.com/capoony/PoolSNP">GitHub</a></td>
+</tr>
+<tr>
+  <td>Snippy</td>
+  <td>Rapid variant calling and core-genome alignment for bacterial genomes.</td>
+  <td><a href="https://github.com/tseemann/snippy">GitHub</a></td>
+</tr>
+<tr>
+  <td>SVIM</td>
+  <td>Identifies structural variants from long-read sequencing alignments.</td>
+  <td><a href="https://github.com/eldariont/svim">GitHub</a></td>
+</tr>
+<tr>
+  <td>VCFtools</td>
+  <td>Utilities for filtering, processing and analyzing VCF files and genetic variation data.</td>
+  <td><a href="https://github.com/vcftools/vcftools">GitHub</a></td>
+</tr>
+<tr>
+  <td>vcflib</td>
+  <td>C++ library and command-line tools for manipulating and analyzing VCF files.</td>
+  <td><a href="https://github.com/vcflib/vcflib">GitHub</a></td>
+</tr>
+<tr>
+  <td>PoolParty</td>
+  <td>Toolkit for analysis of pooled sequencing data; confirm the specific installed project before linking.</td>
+  <td><a href="https://github.com/search?q=PoolParty+bioinformatics&amp;type=repositories">Project search</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="genome-comparison-structural-variation-and-scaffolding">🧬 Genome comparison, structural variation and scaffolding</h2>
+<details>
+<summary><strong>Show genome comparison tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Assemblytics</td>
+  <td>Detects and characterizes structural variants from genome assembly alignments.</td>
+  <td><a href="https://github.com/MariaNattestad/Assemblytics">GitHub</a></td>
+</tr>
+<tr>
+  <td>MUMmer</td>
+  <td>Suite for fast alignment and comparison of large DNA sequences and genome assemblies.</td>
+  <td><a href="https://github.com/mummer4/mummer">GitHub</a></td>
+</tr>
+<tr>
+  <td>Purge_Dups</td>
+  <td>Identifies and removes haplotypic duplications from diploid genome assemblies.</td>
+  <td><a href="https://github.com/dfguan/purge_dups">GitHub</a></td>
+</tr>
+<tr>
+  <td>Purge_Haplotigs</td>
+  <td>Identifies and removes redundant haplotigs from genome assemblies.</td>
+  <td><a href="https://github.com/pdgenomics/purge_haplotigs">GitHub</a></td>
+</tr>
+<tr>
+  <td>RagTag</td>
+  <td>Uses a reference genome to scaffold, correct and compare genome assemblies.</td>
+  <td><a href="https://github.com/malonge/RagTag">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="hi-c-analysis-and-genome-scaffolding">🧩 Hi-C analysis and genome scaffolding</h2>
+<details>
+<summary><strong>Show Hi-C tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>HiC-Pro</td>
+  <td>Processes Hi-C sequencing data, including read mapping, filtering and contact-map generation.</td>
+  <td><a href="https://github.com/nservant/HiC-Pro">GitHub</a></td>
+</tr>
+<tr>
+  <td>HiCStuff</td>
+  <td>Processes and visualizes Hi-C data and contact maps.</td>
+  <td><a href="https://github.com/koszullab/HiC-Box">GitHub</a></td>
+</tr>
+<tr>
+  <td>HALC</td>
+  <td>Corrects long reads using information from Hi-C data.</td>
+  <td><a href="https://github.com/lanlanla/halc">GitHub</a></td>
+</tr>
+<tr>
+  <td>Bandage</td>
+  <td>Interactive visualization of assembly graphs, including graphs produced by de Bruijn-graph assemblers.</td>
+  <td><a href="https://github.com/rrwick/Bandage">GitHub</a></td>
+</tr>
+<tr>
+  <td>CGView</td>
+  <td>Generates circular maps and visualizations of genomes and their annotated features.</td>
+  <td><a href="https://github.com/paulstothard/cgview">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="read-quality-control-mapping-and-sequence-utilities">🧹 Read quality control, mapping and sequence utilities</h2>
+<details>
+<summary><strong>Show read-processing and mapping tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>BWA-MEM</td>
+  <td>Aligns short sequencing reads to reference genomes.</td>
+  <td><a href="https://github.com/lh3/bwa">GitHub</a></td>
+</tr>
+<tr>
+  <td>Cutadapt</td>
+  <td>Finds and removes adapters and primers from sequencing reads.</td>
+  <td><a href="https://github.com/marcelm/cutadapt">GitHub</a></td>
+</tr>
+<tr>
+  <td>FastQC</td>
+  <td>Provides quality-control metrics and reports for raw sequencing reads.</td>
+  <td><a href="https://github.com/s-andrews/FastQC">GitHub</a></td>
+</tr>
+<tr>
+  <td>KMC</td>
+  <td>Fast and memory-efficient k-mer counting for large sequencing datasets.</td>
+  <td><a href="https://github.com/refresh-bio/KMC">GitHub</a></td>
+</tr>
+<tr>
+  <td>Mosdepth</td>
+  <td>Rapidly calculates sequencing coverage and depth across genomic regions.</td>
+  <td><a href="https://github.com/brentp/mosdepth">GitHub</a></td>
+</tr>
+<tr>
+  <td>MultiQC</td>
+  <td>Aggregates and summarizes quality-control reports from many bioinformatics tools into a single report.</td>
+  <td><a href="https://github.com/MultiQC/MultiQC">GitHub</a></td>
+</tr>
+<tr>
+  <td>Picard Tools</td>
+  <td>Collection of utilities for manipulating, validating and analyzing high-throughput sequencing data.</td>
+  <td><a href="https://github.com/broadinstitute/picard">GitHub</a></td>
+</tr>
+<tr>
+  <td>SeqKit</td>
+  <td>Cross-platform toolkit for manipulating FASTA and FASTQ files.</td>
+  <td><a href="https://github.com/shenwei356/seqkit">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="data-visualization-and-reporting">🧪 Data visualization and reporting</h2>
+<details>
+<summary><strong>Show visualization and reporting tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Bandage</td>
+  <td>Interactive visualization of genome assembly graphs.</td>
+  <td><a href="https://github.com/rrwick/Bandage">GitHub</a></td>
+</tr>
+<tr>
+  <td>CGView</td>
+  <td>Circular visualization of genomes and annotated genomic features.</td>
+  <td><a href="https://github.com/paulstothard/cgview">GitHub</a></td>
+</tr>
+<tr>
+  <td>MultiQC</td>
+  <td>Combines outputs from multiple analysis tools into a single interactive quality-control report.</td>
+  <td><a href="https://github.com/MultiQC/MultiQC">GitHub</a></td>
+</tr>
+<tr>
+  <td>Qualimap</td>
+  <td>Quality-control and visualization tool for sequencing alignment data, including RNA-seq.</td>
+  <td><a href="https://github.com/qualimap/qualimap">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="sequencing-simulation-and-reference-data-retrieval">🧪 Sequencing simulation and reference-data retrieval</h2>
+<details>
+<summary><strong>Show simulation and database utilities</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>InSilicoSeq</td>
+  <td>Simulates Illumina sequencing reads from reference genomes or metagenomic communities.</td>
+  <td><a href="https://github.com/HadrienG/InSilicoSeq">GitHub</a></td>
+</tr>
+<tr>
+  <td>NCBI Datasets</td>
+  <td>Command-line interface for downloading and accessing NCBI genome, gene and sequence data.</td>
+  <td><a href="https://github.com/ncbi/datasets">GitHub</a></td>
+</tr>
+<tr>
+  <td>NCBI Genome Download</td>
+  <td>Downloads genome assemblies and associated data from NCBI.</td>
+  <td><a href="https://github.com/kblin/ncbi-genome-download">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="other-scientific-and-specialist-tools">🌳 Other scientific and specialist tools</h2>
+<details>
+<summary><strong>Show additional tools</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Description</th>
+  <th>Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>BEAST</td>
+  <td>Bayesian evolutionary analysis of molecular sequences.</td>
+  <td><a href="https://beast.community/">BEAST website</a></td>
+</tr>
+<tr>
+  <td>Kegg/eggNOG-related tools</td>
+  <td>Functional and pathway annotation utilities; the exact installed package name should be confirmed.</td>
+  <td>—</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<h2 id="software-environments-and-supporting-packages">🧰 Software environments and supporting packages</h2>
+<details>
+<summary><strong>Show environments and supporting software</strong></summary>
+
+<table>
+<thead>
+<tr>
+  <th>Name in platform inventory</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>R / R base</td>
+  <td>Statistical programming language and environment for data analysis and visualization. Multiple R installations are maintained where required by workflows.</td>
+</tr>
+<tr>
+  <td>HDF tools</td>
+  <td>Utilities and libraries for handling Hierarchical Data Format (HDF) files.</td>
+</tr>
+<tr>
+  <td>PacBio tools</td>
+  <td>PacBio-specific utilities; the exact package collection depends on the installed environment.</td>
+</tr>
+<tr>
+  <td>R packages (including <code>rgdal</code> and <code>chili</code>)</td>
+  <td>R packages used by specific analytical workflows. Package availability depends on the corresponding R environment.</td>
+</tr>
+<tr>
+  <td>Snakemake</td>
+  <td>Workflow management system for reproducible and scalable data analysis. <a href="https://github.com/snakemake/snakemake">GitHub</a></td>
+</tr>
+<tr>
+  <td>hicstuff</td>
+  <td>Hi-C data processing utilities. See the Hi-C section above.</td>
+</tr>
+<tr>
+  <td>KeggANOG</td>
+  <td>This tool KEGGaNOG makes eggNOG-mapper meet KEGG-Decoder! It parses eggNOG-mapper output, make it fit for the input to KEGG-Decoder, and then visualizes KEGG Pathways as a heatmap.<a href="https://github.com/ilypopv/KEGGaNOG">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+<hr />
+<h2 id="citing-software">📚 Citing software</h2>
+<p>Please cite the original publication associated with each software whenever it is used in scientific work. The project documentation or repository usually provides the recommended citation.</p>
+<p>For reproducible analyses, record the software name, version, parameters and relevant database versions used in each workflow. For software developed or maintained by eBIOINF, please also cite the corresponding repository and publication when available.</p>
+<h2 id="software-availability-and-support">⚙️ Software availability and support</h2>
+<p>Bioinformatics software and tools are provided through environment modules, Conda environments, and Singularity/Apptainer containers. All software is regularly maintained and updated. If the software or tools you require are not currently installed or available, please contact the platform administrator.</p>
+<hr />
+<section class="platform-team">
+    <h2>👨‍🔬 Platform Team</h2>
+    
+    <div class="team-member">
+        <h3>Bouziane MOUMEN</h3>
+        <p class="role">Bioinformatics Platform Manager</p>
+        <p class="affiliation">CNRS Bioinformatics Research Engineer</p>
+        <ul class="contact-list">
+            <li>📧 <a href="mailto:bouziane.moumen@cnrs.fr">bouziane.moumen[at]cnrs.fr</a></li>
+            <li>📧 <a href="mailto:bouziane.moumen@univ-poitiers.fr">bouziane.moumen[at]univ-poitiers.fr</a></li>
+        </ul>
+    </div>
+
+    <div class="team-member">
+        <h3>Jean-baptiste BERTHELOT</h3>
+        <p class="role">University (SFA) IT support</p>
+        <ul class="contact-list">
+            <li>📧 <a href="mailto:jean.baptiste.berthelot@univ-poitiers.fr">jean.baptiste.berthelot[at]univ-poitiers.fr</a></li>
+        </ul>
+    </div>
+</section>
+
+<p align="center">
+  <strong>eBIOINF · Bioinformatics Core Facility · EBI · UMR CNRS 7267</strong>
+</p>
+
+</article></main>
+  <footer>
+    <strong>eBIOINF · Bioinformatics Core Facility · EBI · UMR CNRS 7267</strong><br>
+    Bioinformatics for Life Sciences
+  </footer>
+  <a class="backtop" href="#top" aria-label="Back to top">↑ Top</a>
+</body>
+</html>
