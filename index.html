@@ -260,8 +260,7 @@ for demanding bioinformatics analyses.</p>
 </table>
 <hr />
 <h2 id="software-catalogue">🧰 Software Catalogue</h2>
-<p>This catalogue lists bioinformatics software available on the platform. Software is provided through environment modules, Conda environments, and/or Singularity/Apptainer containers, depending on the tool.
-Software is regularly maintained and updated. Availability can vary between computing nodes and environments. If a tool is not available or you need a particular version, please contact the platform administrator.</p>
+<p>This catalogue lists bioinformatics software available on the platform. Software is provided through environment modules, Conda environments, and/or Singularity/Apptainer containers, depending on the tool. Software is regularly maintained and updated. Availability can vary between computing nodes and environments. If a tool is not available or you need a particular version, please contact the platform administrator.</p>
 <hr />
 <h2 id="genome-assembly-and-reconstruction">🧬 Genome assembly and reconstruction</h2>
 <details>
@@ -1002,18 +1001,13 @@ Software is regularly maintained and updated. Availability can vary between comp
   <td>Bayesian evolutionary analysis of molecular sequences.</td>
   <td><a href="https://beast.community/">BEAST website</a></td>
 </tr>
-<tr>
-  <td>Kegg/eggNOG-related tools</td>
-  <td>Functional and pathway annotation utilities; the exact installed package name should be confirmed.</td>
-  <td>—</td>
-</tr>
 </tbody>
 </table>
 </details>
 
 <h2 id="software-environments-and-supporting-packages">🧰 Software environments and supporting packages</h2>
 <details>
-<summary><strong>Show environments and supporting software</strong></summary>
+<summary><strong>Show environments and packages</strong></summary>
 
 <table>
 <thead>
@@ -1028,7 +1022,7 @@ Software is regularly maintained and updated. Availability can vary between comp
   <td>Statistical programming language and environment for data analysis and visualization. Multiple R installations are maintained where required by workflows.</td>
 </tr>
 <tr>
-  <td>HDF tools</td>
+  <td>HDF5 tools</td>
   <td>Utilities and libraries for handling Hierarchical Data Format (HDF) files.</td>
 </tr>
 <tr>
@@ -1036,7 +1030,7 @@ Software is regularly maintained and updated. Availability can vary between comp
   <td>PacBio-specific utilities; the exact package collection depends on the installed environment.</td>
 </tr>
 <tr>
-  <td>R packages (including <code>rgdal</code> and <code>chili</code>)</td>
+  <td>R packages (including <code>rgdal</code> and <code>rgeos</code>)</td>
   <td>R packages used by specific analytical workflows. Package availability depends on the corresponding R environment.</td>
 </tr>
 <tr>
@@ -1048,51 +1042,52 @@ Software is regularly maintained and updated. Availability can vary between comp
   <td>Hi-C data processing utilities. See the Hi-C section above.</td>
 </tr>
 <tr>
-  <td>KeggANOG</td>
-  <td>This tool KEGGaNOG makes eggNOG-mapper meet KEGG-Decoder! It parses eggNOG-mapper output, make it fit for the input to KEGG-Decoder, and then visualizes KEGG Pathways as a heatmap.<a href="https://github.com/ilypopv/KEGGaNOG">GitHub</a></td>
+  <td>KEGGANNOT</td>
+  <td>This tool KEGGANNOT makes eggNOG-mapper meet KEGG-Decoder! It parses eggNOG-mapper output, makes it fit for the input to KEGG-Decoder, and then visualizes KEGG pathways as a heatmap. <a href="https://github.com/ilypopv/KEGGannot">GitHub</a></td>
 </tr>
 </tbody>
 </table>
 </details>
 
-<hr />
-<h2 id="in-house-development">In-house development</h2>
-<p>Tools, scripts, and pipelines developed at the platform are coming soon. </p>
-<h2 id="citing-software">📚 Citing software</h2>
+<h2 id="in-house-development">🧪 In-house development</h2>
+<p>Tools, scripts, and pipelines developed at the platform are coming soon.</p>
+
+<h2 id="how-to-cite-the-platform">📚 Citing software</h2>
 <p>Please cite the original publication associated with each software whenever it is used in scientific work. The project documentation or repository usually provides the recommended citation.</p>
 <p>For reproducible analyses, record the software name, version, parameters, and relevant database versions used in each workflow. For software developed or maintained by eBIOINF, please also cite the corresponding repository and publication when available.</p>
-<h2 id="software-availability-and-support">⚙️ Software availability and support</h2>
-<p>Bioinformatics software and tools are provided through environment modules, Conda environments, and Singularity/Apptainer containers. All software is regularly maintained and updated. If the software or tools you require are not currently installed or available, please contact the platform administrator.</p>
-<hr />
-<section class="platform-team">
-    <h2>👨‍🔬 Platform Team</h2>
-    
-    <div class="team-member">
-        <h3>Bouziane MOUMEN</h3>
-        <p class="role">Bioinformatics Platform Manager</p>
-        <p class="affiliation">CNRS Bioinformatics Research Engineer</p>
-        <ul class="contact-list">
-            <li>📧 <a href="mailto:bouziane.moumen@cnrs.fr">bouziane.moumen[at]cnrs.fr</a></li>
-            <li>📧 <a href="mailto:bouziane.moumen@univ-poitiers.fr">bouziane.moumen[at]univ-poitiers.fr</a></li>
-        </ul>
-    </div>
 
-    <div class="team-member">
-        <h3>Jean-baptiste BERTHELOT</h3>
-        <p class="role">University (SFA) IT support</p>
-        <ul class="contact-list">
-            <li>📧 <a href="mailto:jean.baptiste.berthelot@univ-poitiers.fr">jean.baptiste.berthelot[at]univ-poitiers.fr</a></li>
-        </ul>
-    </div>
+<h2 id="software-availability-and-support">🧰 Software availability and support</h2>
+<p>Bioinformatics software and tools are provided through environment modules, Conda environments, and Singularity/Apptainer containers. All software is regularly maintained and updated. If the software or tools you require are not currently installed or available, please contact the platform administrator.</p>
+
+<hr />
+<section class="platform-team" id="platform-team">
+  <h2>🏢 Platform Team</h2>
+  <div class="team-member">
+    <h3>Bouziane MOUMEN</h3>
+    <p class="role">Bioinformatics Platform Manager</p>
+    <p class="affiliation">CNRS Bioinformatics Research Engineer</p>
+    <ul class="contact-list">
+      <li>📧 <a href="mailto:bouziane.moumen@cnrs.fr">bouziane.moumen@cnrs.fr</a></li>
+      <li>📧 <a href="mailto:bouziane.moumen@univ-poitiers.fr">bouziane.moumen@univ-poitiers.fr</a></li>
+    </ul>
+  </div>
+
+  <div class="team-member">
+    <h3>Jean-baptiste BERTHELOT</h3>
+    <p class="role">University (SFA) IT support</p>
+    <ul class="contact-list">
+      <li>📧 <a href="mailto:jean.baptiste.berthelot@univ-poitiers.fr">jean.baptiste.berthelot@univ-poitiers.fr</a></li>
+    </ul>
+  </div>
 </section>
 
 <p align="center">
-  <strong>eBIOINF · Bioinformatics Core Facility · EBI · UMR CNRS 7267</strong>
+  <strong>eBIOINF © Bioinformatics Core Facility © EBI © UMR CNRS 7267</strong>
 </p>
 
 </article></main>
   <footer>
-    <strong>eBIOINF · Bioinformatics Core Facility · EBI · UMR CNRS 7267</strong><br>
+    <strong>eBIOINF © Bioinformatics Core Facility © EBI © UMR CNRS 7267</strong><br>
     Bioinformatics for Life Sciences
   </footer>
   <a class="backtop" href="#top" aria-label="Back to top">↑ Top</a>
